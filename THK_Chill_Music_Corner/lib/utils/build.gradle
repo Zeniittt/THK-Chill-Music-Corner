@@ -1,19 +1,16 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
-    namespace 'com.example.thk_chill_music_corner'
+    namespace 'leveldown.kyle.utils'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.thk_chill_music_corner"
         minSdk 26
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,14 +29,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    implementation 'com.github.realgearinc:multi-sliding-up-panel:1.2.4'
-    implementation 'com.github.realgearinc:readable-bottom-bar:1.0.2'
-
-    implementation project(path:':lib:extensions')
-    implementation project(path:':lib:icons_pack')
 }
