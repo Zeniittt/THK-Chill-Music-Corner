@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,18 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.realgear.multislidinguppanel.MultiSlidingUpPanelLayout
-        android:id="@+id/root_sliding_up_panel"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/ic_launcher">
+        android:layout_height="match_parent">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/root_view_pager"
-            android:background="@color/white"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </com.realgear.multislidinguppanel.MultiSlidingUpPanelLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/background_header_sidebar"
+                app:title="My Toolbar" />
+
+            <com.realgear.multislidinguppanel.MultiSlidingUpPanelLayout
+                android:id="@+id/root_sliding_up_panel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/ic_launcher">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/root_view_pager"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.realgear.multislidinguppanel.MultiSlidingUpPanelLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/layout_header_sidebar"
+            app:menu="@menu/navigation_bar_tabs" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
