@@ -11,9 +11,11 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.thk_chill_music_corner.R;
 import com.example.thk_chill_music_corner.ui.adapters.StateFragmentAdapter;
+import com.example.thk_chill_music_corner.ui.fragments.FragmentCorner;
 import com.example.thk_chill_music_corner.ui.fragments.FragmentHome;
 import com.example.thk_chill_music_corner.ui.fragments.FragmentLibrary;
-import com.example.thk_chill_music_corner.ui.fragments.FragmentSettings;
+import com.example.thk_chill_music_corner.ui.fragments.FragmentForYou;
+import com.example.thk_chill_music_corner.ui.fragments.FragmentProfile;
 import com.realgear.multislidinguppanel.BasePanelView;
 import com.realgear.multislidinguppanel.MultiSlidingUpPanelLayout;
 import com.realgear.readable_bottom_bar.ReadableBottomBar;
@@ -45,8 +47,10 @@ public class RootNavigationBarPanel extends BasePanelView {
 
         StateFragmentAdapter adapter = new StateFragmentAdapter(getSupportFragmentManager(),getLifecycle());
         adapter.addFragment(new FragmentHome());
+        adapter.addFragment(new FragmentForYou());
+        adapter.addFragment(new FragmentCorner());
         adapter.addFragment(new FragmentLibrary());
-        adapter.addFragment(new FragmentSettings());
+        adapter.addFragment(new FragmentProfile());
 
         rootViewPager.setAdapter(adapter);
         rootNavigationBar.setupWithViewPager2(rootViewPager);
