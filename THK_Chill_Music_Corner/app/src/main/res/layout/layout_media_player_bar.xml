@@ -4,11 +4,11 @@
     android:id="@+id/media_player_bar_view"
     android:layout_width="match_parent"
     android:layout_height="@dimen/mediaplayerbar_height"
-    android:padding="8dp">
+    android:padding="4dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="48dp"
         android:elevation="0dp"
         app:cardBackgroundColor="#00000000"
         app:cardCornerRadius="6dp"

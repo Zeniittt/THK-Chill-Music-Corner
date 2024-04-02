@@ -283,12 +283,12 @@
         android:layout_height="match_parent"
         app:layout_behavior="leveldown.kyle.extensions.bottomsheet.CustomBottomSheetBehavior"
         app:behavior_defaultState="collapsed"
-        app:behavior_peekHeight="50dp">
+        app:behavior_peekHeight="48dp">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="1dp"
+            android:layout_marginTop="20dp"
             style="@style/CustomCardViewStyle"/>
 
 

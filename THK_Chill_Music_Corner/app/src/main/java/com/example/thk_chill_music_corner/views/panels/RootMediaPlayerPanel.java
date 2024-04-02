@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thk_chill_music_corner.R;
 import com.example.thk_chill_music_corner.views.MediaPlayerBarView;
@@ -25,9 +26,11 @@ public class RootMediaPlayerPanel extends BasePanelView {
 
     private MediaPlayerView mMediaPlayerView;
     private MediaPlayerBarView mMediaPlayerBarView;
+    private Context mContext;
 
     public RootMediaPlayerPanel(@NonNull Context context, MultiSlidingUpPanelLayout panelLayout) {
         super(context, panelLayout);
+        this.mContext = context;
         getContext().setTheme(R.style.Theme_THK_Chill_Music_Corner);
         LayoutInflater.from(getContext()).inflate(R.layout.layout_root_mediaplayer, this, true);
     }
@@ -44,7 +47,7 @@ public class RootMediaPlayerPanel extends BasePanelView {
 
     @Override
     public void onBindView() {
-        mMediaPlayerView = new MediaPlayerView(findViewById(R.id.media_player_view));
+        mMediaPlayerView = new MediaPlayerView(findViewById(R.id.media_player_view), mContext);
         mMediaPlayerBarView = new MediaPlayerBarView(findViewById(R.id.media_player_bar_view));
 
 
@@ -60,7 +63,8 @@ public class RootMediaPlayerPanel extends BasePanelView {
         bottomSheetBehavior.setAllowUserDragging(true);
 
         bottomSheetBehavior.setAnchorOffset((int) (dm.heightPixels * 0.75f));
-        bottomSheetBehavior.setPeekHeight(getPeakHeight());
+        //bottomSheetBehavior.setPeekHeight(getPeakHeight());
+        bottomSheetBehavior.setPeekHeight(400);
         bottomSheetBehavior.setMediaPlayerBarHeight(getPeakHeight());
         bottomSheetBehavior.setState(CustomBottomSheetBehavior.STATE_COLLAPSED);
 

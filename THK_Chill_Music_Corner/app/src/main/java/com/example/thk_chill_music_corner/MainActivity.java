@@ -52,7 +52,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // but they all should extend the BasePanelView class with same constructors
         // You can add 1 or more then 1 panels
 
-        items.add(RootMediaPlayerPanel.class);
+        RootMediaPlayerPanel rootMediaPlayerPanel = new RootMediaPlayerPanel(this,panelLayout);
+
+        //items.add(RootMediaPlayerPanel.class);
+        items.add(rootMediaPlayerPanel.getClass());
         items.add(RootNavigationBarPanel.class);
 
 
